@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Hindsight memory mode",
+    "description": "Generates and manages the memory routing in ~/.hindsight/coding-agent.json from the workspace tree: off / independent (one memory space per subdirectory) / shared (one memory space for the whole subtree), plus an automatic option (default mode for new roots, rewriting the config whenever the DSH workspace registry changes) and tree-based multi-select, with regenerate and reload."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "@major.chen/dsh-hindsight-config",
+  "version": "1.3.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "DSH Web GUI 的 Hindsight 记忆模式管理面板：按工作区树生成并管理 ~/.hindsight/coding-agent.json 的 bank 路由（关闭 / 独立 / 共享 + 自动）；「自动」跟随 DSH 工作区注册表变化重写配置，另支持按树勾选添加、重新生成与重载。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "hindsight",
+    "memory",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingjiezxc/dsh-hindsight-config.git"
+  },
+  "homepage": "https://github.com/mingjiezxc/dsh-hindsight-config#readme",
+  "bugs": {
+    "url": "https://github.com/mingjiezxc/dsh-hindsight-config/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "generate.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  }
+}

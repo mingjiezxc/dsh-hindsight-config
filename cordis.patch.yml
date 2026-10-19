@@ -1,0 +1,6 @@
+# 本 bundle 的阵容层：向 profile 插入一行管理面板插件。
+# 由 `plugin_manager` install_bundle 安装（等价命令：dsh plugin --profile <name> add link:<本目录>），
+# 安装时把本 bundle 追加进 profile package.json 的 dsh.profile.bundles。
+- insert:
+    - id: hindsight-config
+      name: '@major.chen/dsh-hindsight-config'
