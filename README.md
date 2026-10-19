@@ -100,9 +100,9 @@ watsons-ai / workspace 时只剩 `github`。**点一下候选把路径填进下�
    发布必须显式指向官方 registry：
    `npm login --registry=https://registry.npmjs.org`，或写入 Automation token
    （`//registry.npmjs.org/:_authToken=...`）。
-3. **校验内容**：`npm pack --dry-run --cache /root/workspace/.npm-cache`
-   （本机 `/root/.npm` 只读，必须换 cache 目录）。
-4. **发布**：`npm publish --registry=https://registry.npmjs.org --cache /root/workspace/.npm-cache`
+3. **校验内容**：`npm pack --dry-run`
+   （若本机 npm cache 目录不可写，补 `--cache <可写目录>`）。
+4. **发布**：`npm publish --registry=https://registry.npmjs.org`
    （`publishConfig.access=public` 已声明，无需再传 `--access`）。
 
 改名（作用域/包名）要同步 `client.js` 的 `__ModuleLoader__` 模块 id 与 `BUNDLE`、
@@ -112,7 +112,7 @@ watsons-ai / workspace 时只剩 `github`。**点一下候选把路径填进下�
 
 ```bash
 # 本地 link 安装（等价于 plugin_manager install_bundle，target = 本目录）
-dsh plugin --profile <profile> add link:/root/workspace/dsh-hindsight-config
+dsh plugin --profile <profile> add link:/path/to/dsh-hindsight-config
 
 # 或从 npm 安装
 dsh plugin --profile <profile> add @major.chen/dsh-hindsight-config
